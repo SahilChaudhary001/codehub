@@ -8,7 +8,7 @@ import authRoutes from "./routes/auth.routes.js";
 // import cookieParser from "cookie-parser";
 import exploreRoutes from "./routes/explore.route.js";
 import path from "path"
-// import cors from "cors";
+import cors from "cors";
 import connectMongoDB from "./db/connectMongoDB.js";
 dotenv.config();
 const app=   express();
@@ -19,7 +19,7 @@ app.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: fals
 
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(cors());
+app.use(cors());
 
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
