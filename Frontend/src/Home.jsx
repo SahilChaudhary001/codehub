@@ -17,7 +17,7 @@ const HomePage = () => {
 
 
 	 
-	const getUserProfileAndRepos = useCallback(async (username="SahilChaudhary001") => {
+	const getUserProfileAndRepos = useCallback(async (username="SahilChaudhary11") => {
 		setLoading(true);
 		try {
 			
@@ -29,12 +29,13 @@ const HomePage = () => {
 			//  	},
 			//  }); 
 			//  const userProfile=await UserRes.json();
-			setUserProfile(userProfile);
+			
 			//  const userRes=await fetch(userProfile.repos_url);
 			// const repos=await userRes.json();
 			repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); 
 
 			setRepos(repos);
+			setUserProfile(userProfile);
 	
 			return { userProfile, repos };
 		 
